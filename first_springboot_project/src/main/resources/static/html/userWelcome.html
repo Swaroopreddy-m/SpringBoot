@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome Page</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #ff00b3, #ff66cc, #ff99ff);
+            color: #fff;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            overflow: hidden;
+            animation: backgroundAnimation 15s infinite alternate;
+            transition: background 1s ease-in-out; /* Smooth background transition */
+        }
+
+        .container {
+            max-width: 800px;
+            padding: 30px;
+            border-radius: 15px;
+            background-color: rgba(0, 0, 0, 0.6);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+            animation: fadeIn 2s;
+        }
+
+        .user-frame {
+            width: 160px;
+            height: 160px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.3);
+            margin-bottom: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+            animation: pulse 1.5s infinite alternate;
+        }
+
+        .user-frame img {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+        }
+
+        h1 {
+            font-size: 3.5em;
+            margin-bottom: 15px;
+            animation: fadeIn 2s;
+            color: #ffffff;
+        }
+
+        p {
+            font-size: 1.3em;
+            margin-bottom: 30px;
+            animation: fadeIn 2s 0.5s;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 20px 40px;
+            font-size: 1.2em;
+            font-weight: bold;
+            color: #fff;
+            background-color: #ff7eb3;
+            text-decoration: none;
+            border-radius: 50px;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s, box-shadow 0.3s;
+            margin: 10px;
+            animation: bounce 2s infinite alternate;
+        }
+
+        .btn:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .btn-secondary {
+            background-color: #ff66cc;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes backgroundAnimation {
+            0% {
+                background: linear-gradient(135deg, #ff00b3, #ff66cc, #ff99ff);
+            }
+            25% {
+                background: linear-gradient(135deg, #ff66cc, #ff99ff, #66ccff);
+            }
+            50% {
+                background: linear-gradient(135deg, #66ccff, #33ccff, #00cc99);
+            }
+            75% {
+                background: linear-gradient(135deg, #33ccff, #00cc99, #ffcc00);
+            }
+            100% {
+                background: linear-gradient(135deg, #ffcc00, #ff00b3, #66ccff);
+            }
+        }
+
+        @keyframes pulse {
+            from {
+                transform: scale(1);
+            }
+            to {
+                transform: scale(1.1);
+            }
+        }
+
+        @keyframes bounce {
+            from {
+                transform: translateY(0);
+            }
+            to {
+                transform: translateY(-8px);
+            }
+        }
+
+        .details {
+            margin-top: 20px;
+            font-size: 1.1em;
+            color: #f3f3f3;
+            text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="user-frame">
+            <img src="./images/profilepic.png" alt="User Profile Picture" id="user-img">
+        </div>
+        <h3>Welcome User !</h3>
+        <p>We are delighted to have you here. Explore our features and enjoy your experience!</p>
+        <a href="#" class="btn" onclick="changeMessage()">Get Started</a>
+        <a href="#" class="btn btn-secondary">Learn More</a>
+        <div class="details">
+            <p>Username: <span id="username">Guest</span></p>
+            <p>Last Login: <span id="last-login">Not Available</span></p>
+        </div>
+    </div>
+
+    <script>
+        // Dynamic interactions with JavaScript
+        function changeMessage() {
+            document.querySelector('h1').textContent = "Thank You for Joining!";
+            document.querySelector('p').textContent = "We hope you enjoy exploring our site. Stay tuned for exciting updates!";
+            document.querySelector('.btn').style.backgroundColor = '#4caf50';
+            document.querySelector('.btn').textContent = "Explore More";
+        }
+
+        // Dynamically change profile image
+        document.getElementById('user-img').addEventListener('click', function() {
+            this.src = "https://via.placeholder.com/150/0000FF/808080?Text=User+Profile";
+        });
+
+        // Update username and login info dynamically
+        setTimeout(() => {
+            document.getElementById('username').textContent = "";
+            document.getElementById('last-login').textContent = "";
+        }, 2000);
+    </script>
+</body>
+</html>

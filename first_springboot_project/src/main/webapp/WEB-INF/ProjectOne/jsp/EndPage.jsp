@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic Nature Page</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Arial, sans-serif';
+            background: linear-gradient(120deg, #ff0000, #ff7f00, #ffff00, #00ff00, #0000ff, #4b0082, #8b00ff);
+            background-size: 400% 400%;
+            animation: rainbowBG 8s ease infinite;
+            color: white;
+        }
+
+        @keyframes rainbowBG {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        header {
+            text-align: center;
+            padding: 20px;
+        }
+
+        h1 {
+            font-size: 3.5rem;
+            margin: 0;
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.4);
+        }
+
+        p {
+            font-size: 1.2rem;
+            margin: 5px 0;
+        }
+
+        .content {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            padding: 20px;
+        }
+
+        .image-card {
+            width: 300px;
+            border: 3px solid white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .image-card:hover {
+            transform: scale(1.1);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
+        }
+
+        .image-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .image-card p {
+            margin: 10px;
+            font-size: 1rem;
+            text-align: center;
+            color: #333;
+            background: white;
+            border-radius: 10px;
+            padding: 5px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            font-size: 1rem;
+        }
+
+        footer a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
+	
+	
+	<script>
+		
+	        window.addEventListener("popstate", function () {
+	           
+	            history.pushState(null, null, window.location.href);
+	        });
+	    </script>
+</head>
+<body>
+    <header>
+        <h1>Explore Nature's Beauty</h1>
+        <p>Dive into the world of stunning landscapes and serenity!</p>
+    </header>
+
+    <div class="content">
+        <div class="image-card">
+            <img src="images/Munsiyari-1-1.jpg" alt="Mountains">
+            <p>Breathtaking Mountain Views</p>
+        </div>
+        <div class="image-card">
+            <img src="images/Greater-Good-Science-Center.jpg" alt="Forest">
+            <p>Peaceful Forest Trails</p>
+        </div>
+        <div class="image-card">
+            <img src="images/premium_photo-1682629632657-4ac307921295.jpeg" alt="Beach">
+            <p>Soothing Ocean Breeze</p>
+        </div>
+        <div class="image-card">
+            <img src="images/Waterfalls-Near-Delhi.jpg" alt="Waterfall">
+            <p>Majestic Waterfalls</p>
+        </div>
+    </div>
+
+    <footer>
+        <p>Made with love and colors | <a href="#header">Back to Top</a></p>
+    </footer>
+</body>
+</html>

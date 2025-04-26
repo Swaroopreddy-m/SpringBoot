@@ -1,0 +1,13 @@
+<web-app>
+
+<servlet>
+<servlet-name>Schedular</servlet-name>
+<servlet-class>htmlConnector</servlet-class>
+</servlet>
+
+<servlet-mapping>
+<servlet-name>Schedular</servlet-name>
+<url-pattern>/html</url-pattern>
+</servlet-mapping>
+
+</web-app>
